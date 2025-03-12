@@ -36,8 +36,9 @@ const currentPath = Astro.url.pathname;
                 >
             </li>
             <li>
-                <a class="block p-4 rounded-lg text-green-200" href="/sell"
-                    >À propos</a
+                <a
+                    class="block p-4 rounded-lg text-green-200"
+                    href="/infopratique">À propos</a
                 >
             </li>
             <li>
@@ -46,8 +47,9 @@ const currentPath = Astro.url.pathname;
                 >
             </li>
             <li>
-                <a class="block p-4 rounded-lg text-green-200" href="/resources"
-                    >Billeterie</a
+                <a
+                    class="block p-4 rounded-lg text-green-200"
+                    href="/Billetterie">Billeterie</a
                 >
             </li>
             <li>
@@ -55,10 +57,16 @@ const currentPath = Astro.url.pathname;
                     >Contact</a
                 >
             </li>
+            <li>
+                <a
+                    class="block p-4 rounded-lg text-green-200"
+                    href="/infopratique">Infos Pratique</a
+                >
+            </li>
         </ul>
         <div class="flex items-center justify-center gap-4 px-4">
-            <Button variant="outlined" url="/login" text="Se connecter" />
-            <Button variant="dark" url="/signup" text="S'inscrire" />
+            <Button text="Se connecter" />
+            <Button text="S'inscrire" />
         </div>
     </nav>
 </header>

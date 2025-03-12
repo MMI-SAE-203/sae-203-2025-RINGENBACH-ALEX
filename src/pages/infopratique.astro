@@ -1,0 +1,150 @@
+---
+import Button from "../components/Button.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <main class="bg-green-50 min-h-screen py-16 px-6 md:px-12">
+        <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-2xl p-8">
+            <h1 class="text-4xl font-bold text-green-900 text-center mb-6">
+                Infos Pratiques
+            </h1>
+
+            <!-- Section Lieu -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-green-800">
+                    📍 Lieu du Festival
+                </h2>
+                <p class="text-gray-700 mt-2">
+                    Le festival Ciné'Nature se déroule au bord du <strong
+                        >lac du Malsaucy</strong
+                    >, un cadre naturel exceptionnel situé à proximité de
+                    Belfort.
+                </p>
+                <div class="mt-4">
+                    <iframe
+                        class="w-full h-64 rounded-lg shadow-md"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2687.012859214038!2d6.836715776678417!3d47.69637208736842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47923d64c35e8cf5%3A0x908a7c24a6a64f9b!2sLac%20du%20Malsaucy!5e0!3m2!1sfr!2sfr!4v1710000000000!5m2!1sfr!2sfr"
+                        allowfullscreen=""
+                        loading="lazy"></iframe>
+                </div>
+            </section>
+
+            <!-- Section Dates -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-green-800">
+                    Dates et Horaires
+                </h2>
+                <p class="text-gray-700 mt-2">
+                    Le festival aura lieu du <strong>5 au 7 juillet 2025</strong
+                    >. Horaires d'ouverture :
+                </p>
+                <ul class="list-disc pl-5 mt-3 text-gray-700">
+                    <li>Samedi: 10h00 - 20h00 (dernière séance)</li>
+                    <li>Dimanche : 10h00 - 20h00 (dernière séance)</li>
+                    <li>Lundi : 10h00 - 20h00 (dernière séance)</li>
+                </ul>
+            </section>
+
+            <!-- Section Tarifs -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-green-800">💰 Tarifs</h2>
+                <p class="text-gray-700 mt-2">
+                    Différentes options de billets sont disponibles :
+                </p>
+                <ul class="list-disc pl-5 mt-3 text-gray-700">
+                    <li>Pass 1 jour : 12€</li>
+                    <li>Pass 3 jours : 30€</li>
+                    <li>Gratuit pour les moins de 8 ans</li>
+                </ul>
+                <div class="mt-4">
+                    <Button
+                        variant="green"
+                        url="/billetterie"
+                        text="Réserver un billet"
+                    />
+                </div>
+            </section>
+
+            <!-- Section Accès -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-green-800">
+                    Accès & Transports
+                </h2>
+                <p class="text-gray-700 mt-2">
+                    Le site est accessible par plusieurs moyens :
+                </p>
+                <ul class="list-disc pl-5 mt-3 text-gray-700">
+                    <li>
+                        <strong> En train :</strong> Gare de Belfort à 15 min en
+                        navette gratuite
+                    </li>
+                    <li>
+                        <strong> En bus :</strong> Ligne spéciale Festival depuis
+                        Valdoie
+                    </li>
+                    <li>
+                        <strong>En vélo :</strong> Piste cyclable aménagée + parking
+                        vélo
+                    </li>
+                    <li>
+                        <strong> En voiture :</strong> Parking gratuit à proximité
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Section Hébergement -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-green-800">
+                    Hébergement
+                </h2>
+                <p class="text-gray-700 mt-2">
+                    Plusieurs options d'hébergement sont disponibles pour les
+                    festivaliers :
+                </p>
+                <ul class="list-disc pl-5 mt-3 text-gray-700">
+                    <li>
+                        <strong>Camping du festival</strong> (réservation obligatoire)
+                    </li>
+                    <li>Hôtels & gîtes partenaires à proximité</li>
+                    <li>Aires pour vans et camping-cars</li>
+                </ul>
+                <p class="text-gray-300">(bouton fictif)</p>
+                <div class="mt-4">
+                    <Button variant="lime" text="Voir les hébergements" />
+                </div>
+            </section>
+
+            <div>
+                <h2 class="text-2xl font-semibold mb-4">❓ FAQ</h2>
+                <details class="mb-4">
+                    <summary class="font-semibold cursor-pointer"
+                        >📅 Quels sont les horaires des projections ?</summary
+                    >
+                    <p class="mt-2 pl-4">
+                        Les projections commencent tout les jours à 10h00 et se
+                        terminent vers envrion 22h00.
+                    </p>
+                </details>
+                <details class="mb-4">
+                    <summary class="font-semibold cursor-pointer"
+                        >🌧️ Que se passe-t-il en cas de pluie ?</summary
+                    >
+                    <p class="mt-2 pl-4">
+                        Les projections seront déplacées sous le chapiteau.
+                    </p>
+                </details>
+                <details class="mb-4">
+                    <summary class="font-semibold cursor-pointer"
+                        >🍽️ Peut-on manger sur place ?</summary
+                    >
+                    <p class="mt-2 pl-4">
+                        Oui ! Des stands de nourriture et de boisson locaux
+                        seront disponibles sur place (paiement monnaie ou carte
+                        bancaire uniquement).
+                    </p>
+                </details>
+            </div>
+        </div>
+    </main>
+</Layout>

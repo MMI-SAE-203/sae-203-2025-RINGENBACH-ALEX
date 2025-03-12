@@ -1,0 +1,116 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const festivalDates = "5 au 7 juillet";
+const festivalName = "Ciné'Nature";
+---
+
+<Layout>
+    <section class="max-w-4xl mx-auto py-12 px-6 text-green-900">
+        <h1 class="text-4xl font-bold text-center mb-8">Billetterie</h1>
+        <p class="text-center text-lg mb-12">
+            Réservez vos places pour le festival <strong>{festivalName}</strong>
+            qui se tiendra du <strong>{festivalDates}</strong>. Profitez d’une
+            expérience unique alliant cinéma et écologie !
+        </p>
+
+        <!-- Sélection des billets -->
+        <form class="bg-white shadow-md rounded-lg p-6 space-y-6">
+            <h2 class="text-2xl font-semibold">Sélectionnez vos billets</h2>
+
+            <div class="space-y-4">
+                <label class="flex items-center space-x-3">
+                    <input
+                        type="radio"
+                        name="ticket"
+                        class="form-radio text-green-600"
+                        disabled
+                    />
+                    <span> Pass 1 jour - 12€</span>
+                </label>
+                <label class="flex items-center space-x-3">
+                    <input
+                        type="radio"
+                        name="ticket"
+                        class="form-radio text-green-600"
+                        disabled
+                    />
+                    <span> Pass 3 jours - 30€</span>
+                </label>
+                <label class="flex items-center space-x-3">
+                    <input
+                        type="radio"
+                        name="ticket"
+                        class="form-radio text-green-600"
+                        disabled
+                    />
+                    <span>
+                        Tarif réduit - 8€ (étudiants, -18 ans, demandeurs
+                        d'emploi)</span
+                    >
+                </label>
+            </div>
+
+            <!-- Infos personnelles -->
+            <h2 class="text-2xl font-semibold">Informations</h2>
+            <div class="grid grid-cols-1 gap-4">
+                <input
+                    type="text"
+                    placeholder="Nom et prénom"
+                    class="w-full px-4 py-3 border rounded-lg"
+                    disabled
+                />
+                <input
+                    type="email"
+                    placeholder="Adresse email"
+                    class="w-full px-4 py-3 border rounded-lg"
+                    disabled
+                />
+            </div>
+
+            <!-- Méthode de paiement -->
+            <h2 class="text-2xl font-semibold">Paiement</h2>
+            <div class="space-y-4">
+                <label class="flex items-center space-x-3">
+                    <input
+                        type="radio"
+                        name="payment"
+                        class="form-radio text-green-600"
+                        disabled
+                    />
+                    <span> Carte bancaire</span>
+                </label>
+                <label class="flex items-center space-x-3">
+                    <input
+                        type="radio"
+                        name="payment"
+                        class="form-radio text-green-600"
+                        disabled
+                    />
+                    <span>📱 PayPal</span>
+                </label>
+                <label class="flex items-center space-x-3">
+                    <input
+                        type="radio"
+                        name="payment"
+                        class="form-radio text-green-600"
+                        disabled
+                    />
+                    <span> Virement bancaire</span>
+                </label>
+            </div>
+
+            <!-- Bouton achat factice -->
+            <button
+                type="button"
+                class="w-full py-3 text-lg font-semibold text-white bg-gray-400 rounded-lg cursor-not-allowed"
+                disabled
+            >
+                Paiement indisponible
+            </button>
+            <p class="text-center text-gray-500 italic">
+                Les ventes ne sont pas encore ouvertes.
+            </p>
+        </form>
+    </section>
+</Layout>
