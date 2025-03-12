@@ -1,0 +1,26 @@
+---
+import Button from "./Button.astro";
+---
+
+<section
+    class="relative w-full h-screen bg-green-900 text-white flex items-center justify-center"
+>
+    <div
+        class="absolute inset-0 bg-cover bg-center opacity-40"
+        style="background-image: url('/src/assets/img/index1.svg');"
+    >
+    </div>
+    <div class="relative text-center max-w-3xl px-6">
+        <h1 class="text-4xl md:text-6xl font-bold">Ciné'Nature</h1>
+        <p class="mt-4 text-lg md:text-xl">
+            Le Ciné'Nature est un festival convivial et festif alliant cinéma et
+            écologie, avec des projections, des rencontres et des ateliers pour
+            sensibiliser aux enjeux environnementaux. Installé au bord du lac du
+            Malsaucy, il offre une expérience immersive en plein air, où culture
+            et nature se rejoignent sous les étoiles.
+        </p>
+        <div class="mt-6 flex justify-center gap-4">
+            <Button variant="outlined" url="/engagements" text="Biletterie" />
+        </div>
+    </div>
+</section>

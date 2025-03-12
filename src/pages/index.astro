@@ -1,10 +1,183 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Button from "../components/Button.astro";
 ---
 
-<Layout>
-	<Header />
+<Layout title="Accueil">
+    <main>
+        <Hero />
+
+        <!-- Section de navigation avec un design esthétique, cinématographique et écologique -->
+        <div class="mt-16 text-center">
+            <h2 class="text-3xl md:text-5xl font-semibold text-green-900 mb-12">
+                Explorez nos pages
+            </h2>
+
+            <!-- Conteneur des liens de navigation -->
+            <div class="flex flex-wrap justify-center gap-8 mb-12">
+                <Button variant="green" url="/programme" text="Programme" />
+                <Button variant="teal" url="/contact" text="Contact" />
+                <Button
+                    variant="lime"
+                    url="/edition-precedente"
+                    text="Édition Précédente"
+                />
+                <Button
+                    variant="default"
+                    url="/billetterie"
+                    text="Billetterie"
+                />
+            </div>
+        </div>
+
+        <!-- Section des Partenaires -->
+        <section class="bg-green-50 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-semibold text-green-900">
+                    Nos Partenaires
+                </h2>
+                <p class="text-lg text-gray-600 mt-4">
+                    Ces organisations nous accompagnent dans la mise en place du
+                    Ciné'Nature. Découvrez nos partenaires qui partagent notre
+                    engagement pour un cinéma plus responsable et écologique.
+                </p>
+            </div>
+
+            <!-- Conteneur des partenaires -->
+            <div class="flex flex-wrap justify-center gap-12">
+                <!-- Partenaire 1 : Green Film Network -->
+                <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs w-full text-center p-6"
+                >
+                    <h3 class="text-xl font-semibold text-green-900">
+                        Green Film Network
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Réseau International de Festivals de Films Écologiques
+                    </p>
+                    <p class="text-sm text-gray-600 mt-4">
+                        Un réseau mondial qui soutient les festivals promouvant
+                        le cinéma écologique et sensibilisant aux enjeux
+                        environnementaux.
+                    </p>
+                </div>
+
+                <!-- Partenaire 2 : WWF -->
+                <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs w-full text-center p-6"
+                >
+                    <h3 class="text-xl font-semibold text-green-900">WWF</h3>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Organisation de Conservation de la Nature
+                    </p>
+                    <p class="text-sm text-gray-600 mt-4">
+                        WWF lutte pour la protection de la nature et la
+                        biodiversité, et soutient des événements comme
+                        Ciné'Nature pour sensibiliser à la préservation de
+                        l'environnement.
+                    </p>
+                </div>
+
+                <!-- Partenaire 3 : Les Films du Soleil -->
+                <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs w-full text-center p-6"
+                >
+                    <h3 class="text-xl font-semibold text-green-900">
+                        Les Films du Soleil
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Production et Distribution de Films Documentaires
+                        Écologiques
+                    </p>
+                    <p class="text-sm text-gray-600 mt-4">
+                        Société de production engagée dans les films
+                        documentaires sur les thèmes de la nature, des océans et
+                        de l'environnement.
+                    </p>
+                </div>
+
+                <!-- Partenaire 4 : Ecosia -->
+                <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs w-full text-center p-6"
+                >
+                    <h3 class="text-xl font-semibold text-green-900">Ecosia</h3>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Moteur de Recherche Écologique
+                    </p>
+                    <p class="text-sm text-gray-600 mt-4">
+                        Ecosia plante des arbres à chaque recherche, soutenant
+                        ainsi des actions de reforestation pour un avenir plus
+                        vert.
+                    </p>
+                </div>
+
+                <!-- Partenaire 5 : Terre Sauvage -->
+                <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs w-full text-center p-6"
+                >
+                    <h3 class="text-xl font-semibold text-green-900">
+                        Terre Sauvage
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Média Environnemental
+                    </p>
+                    <p class="text-sm text-gray-600 mt-4">
+                        Magasin dédié à la nature et à l’environnement, offrant
+                        un large contenu pour la préservation de la
+                        biodiversité.
+                    </p>
+                </div>
+
+                <!-- Partenaire 6 : Greenpeace -->
+                <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs w-full text-center p-6"
+                >
+                    <h3 class="text-xl font-semibold text-green-900">
+                        Greenpeace
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Organisation Non Gouvernementale Environnementale
+                    </p>
+                    <p class="text-sm text-gray-600 mt-4">
+                        Greenpeace lutte contre le changement climatique et la
+                        dégradation de l'environnement à travers des actions
+                        directes et des campagnes de sensibilisation.
+                    </p>
+                </div>
+
+                <!-- Partenaire 7 : La Recyclerie -->
+                <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs w-full text-center p-6"
+                >
+                    <h3 class="text-xl font-semibold text-green-900">
+                        La Recyclerie
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Récupération et Recyclage
+                    </p>
+                    <p class="text-sm text-gray-600 mt-4">
+                        La Recyclerie propose des initiatives autour du
+                        recyclage et de la réduction des déchets, parfait pour
+                        un événement écoresponsable.
+                    </p>
+                </div>
+
+                <!-- Partenaire 8 : CinemaxX -->
+                <div
+                    class="bg-white shadow-lg rounded-lg overflow-hidden max-w-xs w-full text-center p-6"
+                >
+                    <h3 class="text-xl font-semibold text-green-900">
+                        CinemaxX
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-2">Cinéma Écologique</p>
+                    <p class="text-sm text-gray-600 mt-4">
+                        CinemaxX réduit l'empreinte carbone de l'industrie
+                        cinématographique en utilisant des pratiques
+                        respectueuses de l'environnement.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
 </Layout>
-<Footer />

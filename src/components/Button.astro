@@ -1,6 +1,7 @@
 ---
+// Button.astro
 export interface Props {
-    variant?: "default" | "dark" | "outlined";
+    variant?: "green" | "teal" | "lime" | "default";
     size?: "small" | "medium" | "large";
     url?: string;
     text?: string;
@@ -13,10 +14,12 @@ const {
     text = "",
 } = Astro.props;
 
+// Définition des couleurs selon les variantes
 const variantClass = {
-    default: "border-green-100 bg-green-50",
-    dark: "border border-green-500 bg-green-500 text-white",
-    outlined: "border-green-200 bg-red",
+    green: "bg-green-600 hover:bg-green-700 text-white",
+    teal: "bg-teal-600 hover:bg-teal-700 text-white",
+    lime: "bg-lime-600 hover:bg-lime-700 text-white",
+    default: "bg-green-500 hover:bg-green-600 text-white",
 };
 
 const sizeClass = {
@@ -28,8 +31,11 @@ const sizeClass = {
 
 <a
     href={url}
-    class={`inline-flex items-center gap-2 text-green-300 border-2 font-bold rounded-lg transition duration-300 ease-in-out ${variantClass[variant]} ${sizeClass[size]}`}
+    class={`group relative inline-flex items-center justify-center px-8 py-4 ${variantClass[variant]} text-lg font-semibold rounded-lg shadow-lg transform transition-all duration-300 ease-in-out hover:scale-105`}
 >
-    <slot />
-    {text}
+    <span class="absolute inset-0 opacity-30 group-hover:opacity-50"></span>
+    <span class="relative z-10 flex items-center gap-2">
+        <slot />
+        {text}
+    </span>
 </a>
