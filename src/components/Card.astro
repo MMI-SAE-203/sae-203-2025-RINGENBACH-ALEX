@@ -1,0 +1,24 @@
+---
+import { getImageUrl } from "../../backend.mjs";
+const { film } = Astro.props;
+const AfficheUrl = getImageUrl(film, "image");
+---
+
+<a
+    href={`/film/${film.id}`}
+    class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+>
+    <img
+        src={`http://127.0.0.1:8090/api/files/film/${film.id}/${film.affiche}`}
+        alt={film.titre}
+        class="w-full h-48 object-cover"
+        loading="lazy"
+    />
+
+    <div class="p-4">
+        <h2 class="text-xl font-semibold">{film.titre}</h2>
+        <p class="text-gray-600 text-sm mt-2 line-clamp-3">
+            {film.synopsis}
+        </p>
+    </div>
+</a>

@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Facebook from "../assets/icons/IconFacebook.svg";
+import Instagram from "../assets/icons/IconInstagram.svg";
+import Linkedin from "../assets/icons/IconLinkedin.svg";
 ---
 
 <Layout>
@@ -66,8 +69,35 @@ import Layout from "../layouts/Layout.astro";
                 >
             </p>
             <p>
-                <strong>Adresse :</strong> Lac du Malsaucy, 90000 Belfort, France
+                <strong> Adresse :</strong> Lac du Malsaucy, 90000 Belfort, France
             </p>
+        </div>
+
+        <!-- Réseaux sociaux -->
+        <div class="mt-8 text-center">
+            <h2 class="text-2xl font-semibold mb-4">Suivez-nous</h2>
+            <div class="flex justify-center space-x-6 text-xl">
+                <ul class="flex gap-12 justify-center">
+                    <li>
+                        <a
+                            href="https://www.facebook.com/mmimontbeliard?locale=fr_FR"
+                            aria-label="Facebook"
+                            ><Facebook class="fill-green-300" /></a
+                        >
+                    </li>
+                    <li>
+                        <a href="https://instagram.com" aria-label="Instagram"
+                            ><Instagram class="fill-green-300" /></a
+                        >
+                    </li>
+
+                    <li>
+                        <a href="https://linkedin.com" aria-label="Linkedin"
+                            ><Linkedin class="fill-green-300" /></a
+                        >
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 </Layout>

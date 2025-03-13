@@ -1,0 +1,22 @@
+---
+import pb from "../../../backend.mjs";
+import { getImageUrl } from "../../../backend.mjs";
+import Layout from "../../layouts/Layout.astro";
+
+const { id } = Astro.params;
+const film = await pb.collection("film").getOne(id);
+const imageUrl = getImageUrl(film, "image"); // Generate the image URL
+---
+
+<Layout title={film.titre}>
+    <div class="max-w-4xl mx-auto py-12 px-6">
+        <img
+            src={imageUrl}
+            alt={film.titre}
+            class="w-full rounded-lg shadow-lg mb-6"
+        />
+
+        <h1 class="text-3xl font-bold mb-4">{film.titre}</h1>
+        <p class="text-lg text-gray-700">{film.description}</p>
+    </div>
+</Layout>

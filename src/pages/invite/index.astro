@@ -1,0 +1,16 @@
+---
+import pb from "../../../backend.mjs";
+import Card from "../../components/Card.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const films = await pb.collection("film").getFullList();
+---
+
+<Layout title="Programme des Films">
+    <h1 class="text-3xl font-bold mb-6">Liste des films</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-12 pt-0">
+        {films.map((film) => <Card film={film} />)}
+    </div>
+</Layout>
+s

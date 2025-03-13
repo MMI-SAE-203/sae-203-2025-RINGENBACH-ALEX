@@ -1,6 +1,9 @@
 import PocketBase from 'pocketbase';
 const pb = new PocketBase('http://127.0.0.1:8090');
-
+export default pb;
+export function getImageUrl(record, field) {
+    return `http://localhost:8090/api/files/${record.collectionId || 'Film'}/${record.id}/${record[field]}`;
+}
 // 1) récupérer la liste de tous les films triés par date de projection
 export async function getFilms() {
     const records = await pb.collection('film').getFullList({
