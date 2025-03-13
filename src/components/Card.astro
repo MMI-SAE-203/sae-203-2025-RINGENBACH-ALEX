@@ -1,24 +1,18 @@
 ---
-import { getImageUrl } from "../../backend.mjs";
-const { film } = Astro.props;
-const AfficheUrl = getImageUrl(film, "image");
+const { titre, date, affiche, collectionId, recordId } = Astro.props;
+const baseUrl = "http://127.0.0.1:8090";
+const afficheUrl = `${baseUrl}/api/files/${collectionId}/${recordId}/${affiche}`;
+const filmUrl = `/film/${recordId}`;
+console.log("Affiche URL:", afficheUrl);
 ---
 
 <a
-    href={`/film/${film.id}`}
-    class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+    href={filmUrl}
+    class="block bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
 >
-    <img
-        src={`http://127.0.0.1:8090/api/files/film/${film.id}/${film.affiche}`}
-        alt={film.titre}
-        class="w-full h-48 object-cover"
-        loading="lazy"
-    />
-
+    <img src={afficheUrl} alt={titre} class="w-full h-48 object-cover" />
     <div class="p-4">
-        <h2 class="text-xl font-semibold">{film.titre}</h2>
-        <p class="text-gray-600 text-sm mt-2 line-clamp-3">
-            {film.synopsis}
-        </p>
+        <h3 class="text-2xl font-bold text-green-600">{titre}</h3>
+        <p class="mt-2 text-gray-700">Diffusion : {date}</p>
     </div>
 </a>

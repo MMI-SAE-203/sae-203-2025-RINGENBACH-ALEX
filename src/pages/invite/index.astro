@@ -1,16 +1,63 @@
 ---
-import pb from "../../../backend.mjs";
+import Base from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
-import Layout from "../../layouts/Layout.astro";
+import { allParticipants } from "../../../backend/backend.mjs";
+import HeroImage from "../../assets/img/index1.svg";
+import { Image } from "astro:assets";
 
-const films = await pb.collection("film").getFullList();
+const invites = await allParticipants();
+const baseUrl = "http://127.0.0.1:8090/";
+const defaultPhotoUrl = "/path/to/default/photo.jpg";
 ---
 
-<Layout title="Programme des Films">
-    <h1 class="text-3xl font-bold mb-6">Liste des films</h1>
+<Base titre="NOS INVITÉS">
+    <div class="mt-100">
+        <section
+            class="relative w-full h-96 flex items-center justify-center text-center text-white bg-cover bg-center"
+        >
+            <Image
+                src={HeroImage}
+                alt="Festival Ça va Trail'er"
+                width={1920}
+                height={1080}
+                class="absolute inset-0 w-full h-96 object-cover"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-20"></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-12 pt-0">
-        {films.map((film) => <Card film={film} />)}
+            <div class="relative z-10 px-8 max-w-4xl">
+                <h1
+                    class="text-6xl md:text-8xl font-extrabold uppercase tracking-wide"
+                >
+                    Nos Invités
+                </h1>
+                <p
+                    class="mt-4 text-2xl md:text-3xl font-semibold text-orange-500 bg-white bg-opacity-75 px-4 py-2 rounded-md inline-block"
+                >
+                    Découvrez nos invités
+                </p>
+            </div>
+        </section>
+
+        <section class="max-w-6xl mx-auto my-12 px-6 text-center">
+            <h1 class="text-5xl font-bold text-orange-600 mb-8">Invités</h1>
+            <div class="grid md:grid-cols-3 gap-12">
+                {
+                    invites.map((invite) => {
+                        const photoUrl = invite.photo
+                            ? `${baseUrl}/api/files/invite/${invite.id}/${invite.photo}`
+                            : defaultPhotoUrl;
+                        return (
+                            <Card
+                                titre={`${invite.prenom} ${invite.nom}`}
+                                diffusion={invite.role}
+                                affiche={photoUrl}
+                                collectionId="Invite"
+                                recordId={invite.id}
+                            />
+                        );
+                    })
+                }
+            </div>
+        </section>
     </div>
-</Layout>
-s
+</Base>

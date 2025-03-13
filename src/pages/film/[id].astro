@@ -1,0 +1,84 @@
+---
+import Base from "../../layouts/Layout.astro";
+import { oneFilm } from "../../../backend/backend.mjs";
+
+const { id } = Astro.params;
+const film = await oneFilm(id);
+const baseUrl = "http://127.0.0.1:8090"; // Remplacez par l'URL de votre instance PocketBase
+const afficheUrl = `${baseUrl}/api/files/film/${id}/${film.affiche}`;
+---
+
+<Base titre={film.titre}>
+    <div class="mt-20">
+        <!-- Bannière -->
+        <section
+            class="relative w-full h-96 flex items-center justify-center text-center text-white bg-cover bg-center"
+        >
+            <img
+                src={afficheUrl}
+                alt={film.titre}
+                class="absolute inset-0 w-full h-96 object-cover blur-md"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+            <div class="relative z-10 px-8 max-w-4xl">
+                <h1
+                    class="text-6xl md:text-7xl font-extrabold uppercase tracking-wider drop-shadow-lg"
+                >
+                    {film.titre}
+                </h1>
+            </div>
+        </section>
+
+        <!-- Détails du film -->
+        <section class="max-w-6xl mx-auto my-16 px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img
+                        src={afficheUrl}
+                        alt={film.titre}
+                        class="w-full rounded-xl shadow-xl"
+                    />
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-green-500 mb-6">
+                        Détails du film
+                    </h2>
+                    <ul class="text-lg text-gray-800 space-y-4">
+                        <li>
+                            <strong class="text-gray-900">Durée :</strong>
+                            {film.duree}
+                        </li>
+                        <li>
+                            <strong class="text-gray-900">Langue :</strong>
+                            {film.langue}
+                        </li>
+                        <li>
+                            <strong class="text-gray-900">Production :</strong>
+                            {film.production}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Synopsis du film -->
+        <section class="max-w-6xl mx-auto my-16 px-6">
+            <h2 class="text-4xl font-bold text-green-500 mb-6">Synopsis</h2>
+            <p
+                class="text-lg text-gray-800 leading-relaxed bg-gray-100 p-6 rounded-lg shadow-md"
+            >
+                {film.synopsis}
+            </p>
+        </section>
+
+        <!-- Bouton de retour -->
+        <section class="max-w-6xl mx-auto my-16 px-6 text-center">
+            <a
+                href="/film"
+                class="inline-block bg-green-500 text-white font-semibold py-4 px-10 rounded-xl shadow-lg text-lg transition duration-300 transform hover:scale-105 hover:bg-orange-500"
+            >
+                Retour à la liste des films
+            </a>
+        </section>
+    </div>
+</Base>
