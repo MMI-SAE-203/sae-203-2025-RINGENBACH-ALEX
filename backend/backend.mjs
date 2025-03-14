@@ -1,5 +1,5 @@
 import PocketBase from 'pocketbase';
-const pb = new PocketBase('http://127.0.0.1:8090');
+const pb = new PocketBase('https://sae-203.alex-ringenbach.fr:443');
 export default pb;
 
 export async function allFilms() {
@@ -37,9 +37,6 @@ export async function allParticipantsSorted() {
     });
 }
 
-export async function oneFilm(id) {
-    return await pb.collection('film').getOne(id);
-}
 
 export async function oneActivity(id) {
     return await pb.collection('activites').getOne(id);
