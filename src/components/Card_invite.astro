@@ -1,0 +1,20 @@
+---
+const { prenom, nom, role, photo, biographie, collectionId, recordId, invite } =
+    Astro.props;
+
+const baseUrl = "http://127.0.0.1:8090";
+const photoUrl = `${baseUrl}/api/files/${collectionId}/${recordId}/${photo}`;
+const inviteUrl = `/invite/${recordId}`;
+console.log("Affiche URL:", photoUrl);
+---
+
+<a
+    href={inviteUrl}
+    class="block bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
+>
+    <img src={photoUrl} class="w-full h-48 object-cover" loading="lazy" />
+    <div class="p-4">
+        <h3 class="text-2xl font-bold text-green-600">{nom}</h3>
+        <p class="mt-2 text-gray-700">Rôle {role}</p>
+    </div>
+</a>

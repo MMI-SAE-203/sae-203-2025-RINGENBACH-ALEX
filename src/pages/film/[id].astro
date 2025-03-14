@@ -4,7 +4,7 @@ import { oneFilm } from "../../../backend/backend.mjs";
 
 const { id } = Astro.params;
 const film = await oneFilm(id);
-const baseUrl = "http://127.0.0.1:8090"; // Remplacez par l'URL de votre instance PocketBase
+const baseUrl = "http://127.0.0.1:8090";
 const afficheUrl = `${baseUrl}/api/files/film/${id}/${film.affiche}`;
 ---
 

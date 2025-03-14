@@ -1,13 +1,13 @@
 ---
 import Base from "../../layouts/Layout.astro";
-import Card from "../../components/Card.astro";
+import Card from "../../components/Card_invite.astro";
 import { allParticipants } from "../../../backend/backend.mjs";
 import HeroImage from "../../assets/img/index1.svg";
 import { Image } from "astro:assets";
 
 const invites = await allParticipants();
 const baseUrl = "http://127.0.0.1:8090/";
-const defaultPhotoUrl = "/path/to/default/photo.jpg";
+const defaultPhotoUrl = "/path/to/default/photo.svg";
 ---
 
 <Base titre="NOS INVITÉS">
@@ -17,7 +17,7 @@ const defaultPhotoUrl = "/path/to/default/photo.jpg";
         >
             <Image
                 src={HeroImage}
-                alt="Festival Ça va Trail'er"
+                alt="Ciné'Nature"
                 width={1920}
                 height={1080}
                 class="absolute inset-0 w-full h-96 object-cover"
@@ -31,7 +31,7 @@ const defaultPhotoUrl = "/path/to/default/photo.jpg";
                     Nos Invités
                 </h1>
                 <p
-                    class="mt-4 text-2xl md:text-3xl font-semibold text-orange-500 bg-white bg-opacity-75 px-4 py-2 rounded-md inline-block"
+                    class="mt-4 text-2xl md:text-3xl font-semibold text-green-500 bg-white bg-opacity-75 px-4 py-2 rounded-md inline-block"
                 >
                     Découvrez nos invités
                 </p>
@@ -39,7 +39,7 @@ const defaultPhotoUrl = "/path/to/default/photo.jpg";
         </section>
 
         <section class="max-w-6xl mx-auto my-12 px-6 text-center">
-            <h1 class="text-5xl font-bold text-orange-600 mb-8">Invités</h1>
+            <h1 class="text-5xl font-bold text-green-600 mb-8">Invités</h1>
             <div class="grid md:grid-cols-3 gap-12">
                 {
                     invites.map((invite) => {
