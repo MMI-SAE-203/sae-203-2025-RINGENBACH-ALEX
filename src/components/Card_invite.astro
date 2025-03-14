@@ -2,7 +2,7 @@
 const { prenom, nom, role, photo, biographie, collectionId, recordId, invite } =
     Astro.props;
 
-const baseUrl = "http://127.0.0.1:8090";
+const baseUrl = "https://sae-203.alex-ringenbach.fr";
 const photoUrl = `${baseUrl}/api/files/${collectionId}/${recordId}/${photo}`;
 const inviteUrl = `/invite/${recordId}`;
 console.log("Affiche URL:", photoUrl);

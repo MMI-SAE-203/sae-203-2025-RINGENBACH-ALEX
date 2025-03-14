@@ -1,6 +1,6 @@
 ---
 const { titre, date, affiche, collectionId, recordId } = Astro.props;
-const baseUrl = "http://127.0.0.1:8090";
+const baseUrl = "https://sae-203.alex-ringenbach.fr";
 const afficheUrl = `${baseUrl}/api/files/${collectionId}/${recordId}/${affiche}`;
 const filmUrl = `/film/${recordId}`;
 console.log("Affiche URL:", afficheUrl);
