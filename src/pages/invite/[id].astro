@@ -4,7 +4,7 @@ import { oneParticipant } from "../../../backend/backend.mjs";
 
 const { id } = Astro.params;
 const invite = await oneParticipant(id);
-const baseUrl = "http://127.0.0.1:8090"; // Remplacez par l'URL de votre instance PocketBase
+const baseUrl = "https://sae-203.alex-ringenbach.fr"; // Remplacez par l'URL de votre instance PocketBase
 const photoUrl = `${baseUrl}/api/files/invite/${id}/${invite.photo}`;
 ---
 
